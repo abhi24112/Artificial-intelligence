@@ -18,3 +18,8 @@ pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
 <div>
 <img src="attachment:Screenshot.png" width="500"/>
 </div>
+
+Add youtube video in notbook:::
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('coOTEc-0OGw', width=560, height=315)
