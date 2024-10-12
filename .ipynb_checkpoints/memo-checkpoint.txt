@@ -1,20 +1,44 @@
-# this is command for git hub 
+------------- this is command for git hub -------------
 github repo:
 git add .
 git commit -m "message"
 git push
 
-
-Marks for notebook:.
+-------------Marks for notebook-------------
 1.<h1 style = "font-size:4rem; color:Red;" align="center"></h1>
 2.<h1 style = "font-size:3rem;color:orange;"></h1>
 3.<h2 style = "font-size:2rem;color:blue;"></h2>
 4.<h3 style = "font-size:1.5rem;color:green;"></h3>
 
+-------------image tag-------------
+<div>
+<img src="attachment:Screenshot.png" width="500"/>
+</div>
 
-update all packages in python
-pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+---------------===gif-----------------
+![gif](https://upload.wikimedia.org/wikipedia/commons/7/71/ChessPawnSpecialMoves.gif)
 
 <div>
 <img src="attachment:Screenshot.png" width="500"/>
 </div>
+
+-------------Add youtube video in notbook--------------
+from IPython.display import YouTubeVideo
+YouTubeVideo('coOTEc-0OGw', width=860, height=515, start="seconds")
+
+--------- remove warning from notebook ------------
+import warnings
+warnings.filterwarnings('ignore')
+
+--------- Set the option to display all rows ------------
+pd.set_option('display.max_rows', None)
+
+--------- Reset the option to the default value ------------
+pd.reset_option('display.max_rows')
+
+-------------table content -------------
+# Other Techniques To Handle Unbalanced Datasets
+1. [Oversampling](2_Oversampling.ipynb)
+2. [SMOTE (Synthetic minority Oversamling Technique) most Popular](3_SMOTE.ipynb)
+
+
