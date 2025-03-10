@@ -286,3 +286,24 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+# Evaluating the model predictions
+from sklearn.metrics import precision_score,recall_score, f1_score, accuracy_score
+
+def calculate_results(y_true, y_pred):
+  """
+  Calcuate the accuracy_score, precision_score, recall_score, f1-score of the model.
+
+  --Args-- 
+  y_true : True labels of the data
+  y_pred : Predicted label of the data
+
+  """
+  acc_score = accuracy_score(y_true, y_pred)
+  pre_score = precision_score(y_true, y_pred)
+  recall = recall_score(y_true, y_pred)
+  f1 = f1_score(y_true, y_pred)
+  print(f"Accuracy Score: {acc_score * 100:.2f} %")
+  print(f"Precision Score: {pre_score}")
+  print(f"Recall Score: {recall}")
+  print(f"f1 Score: {f1}")
