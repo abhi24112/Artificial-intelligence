@@ -303,7 +303,8 @@ def calculate_results(y_true, y_pred):
   pre_score = precision_score(y_true, y_pred)
   recall = recall_score(y_true, y_pred)
   f1 = f1_score(y_true, y_pred)
-  print(f"Accuracy Score: {acc_score * 100:.2f} %")
-  print(f"Precision Score: {pre_score}")
-  print(f"Recall Score: {recall}")
-  print(f"f1 Score: {f1}")
+  model_results = {"accuracy": acc_score,
+                  "precision": pre_score,
+                  "recall": recall,
+                  "f1": f1}
+  return model_results
