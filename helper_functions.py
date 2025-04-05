@@ -287,24 +287,28 @@ def calculate_results(y_true, y_pred):
                   "f1": model_f1}
   return model_results
 
-# Evaluating the model predictions
-from sklearn.metrics import precision_score,recall_score, f1_score, accuracy_score
+# Function to evaluate: accuracy, precision, recall, f1-score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 def calculate_results(y_true, y_pred):
   """
-  Calcuate the accuracy_score, precision_score, recall_score, f1-score of the model.
+  Calculates model accuracy, precision, recall and f1 score of a binary classification model.
 
-  --Args-- 
-  y_true : True labels of the data
-  y_pred : Predicted label of the data
+  Args:
+      y_true: true labels in the form of a 1D array
+      y_pred: predicted labels in the form of a 1D array
 
+  Returns a dictionary of accuracy, precision, recall, f1-score.
   """
-  acc_score = accuracy_score(y_true, y_pred)
-  pre_score = precision_score(y_true, y_pred)
-  recall = recall_score(y_true, y_pred)
-  f1 = f1_score(y_true, y_pred)
-  model_results = {"accuracy": acc_score,
-                  "precision": pre_score,
-                  "recall": recall,
-                  "f1": f1}
+  # Calculate model accuracy
+  model_accuracy = accuracy_score(y_true, y_pred) * 100
+  # Calculate model precision, recall and f1 score using "weighted average
+  model_accuracy = accuracy_score(y_true, y_pred)
+  model_precision = precision_score(y_true, y_pred, average='weighted')
+  model_recall = recall_score(y_true, y_pred, average='weighted')
+  model_f1 = f1_score(y_true, y_pred, average='weighted')
+  model_results = {"accuracy": model_accuracy,
+                  "precision": model_precision,
+                  "recall": model_recall,
+                  "f1": model_f1}
   return model_results
